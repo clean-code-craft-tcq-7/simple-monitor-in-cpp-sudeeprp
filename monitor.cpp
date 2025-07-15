@@ -32,7 +32,7 @@ int pulseRateOk(float pulseRate) {
 
 int spo2Ok(float spo2) {
   if (spo2 < 90) {
-    cout << "Oxygen Saturation out of range!\n";
+    cout << "Oxygen Saturation out of range.\n";
     vitalsCheckAttention();
     return 0;
   }
