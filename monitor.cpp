@@ -55,6 +55,7 @@ int vitalsOk(float temperature, float pulseRate, float spo2) {
   return temperatureOk(temperature) && pulseRateOk(pulseRate) && spo2Ok(spo2);
 }
 
+// TODO: Write test for patientReportOk and implement it.
 // int patientReportOk(Report report) {
 //   return vitalsOk(report.temperature, report.pulseRate, report.spo2) &&
 //          bloodSugarOk(report.bloodSugar);
