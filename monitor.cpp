@@ -14,8 +14,12 @@ void vitalsCheckAttention() {
   }
 }
 
+int isInRange(float value, float min, float max) {
+  return (value > min && value < max);
+}
+
 int temperatureOk(float temperature) {
-  if (temperature > 102 || temperature < 95) {
+  if (!isInRange(temperature, 95, 102)) {
     cout << "Temperature is critical!\n";
     vitalsCheckAttention();
     return 0;
@@ -24,7 +28,7 @@ int temperatureOk(float temperature) {
 }
 
 int pulseRateOk(float pulseRate) {
-  if (pulseRate < 60 || pulseRate > 100) {
+  if (!isInRange(pulseRate, 60, 100)) {
     cout << "Pulse Rate is out of range!\n";
     vitalsCheckAttention();
     return 0;
@@ -33,7 +37,7 @@ int pulseRateOk(float pulseRate) {
 }
 
 int spo2Ok(float spo2) {
-  if (spo2 < 90) {
+  if (!isInRange(spo2, 90, 100)) {
     cout << "Oxygen Saturation out of range.\n";
     vitalsCheckAttention();
     return 0;
